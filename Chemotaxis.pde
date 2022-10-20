@@ -1,4 +1,7 @@
 Bacteria [] Robin;   
+int rX = -6;
+int rY = -6;
+ 
  
  //declare bacteria variables here   
  void setup()   
@@ -12,6 +15,26 @@ Bacteria [] Robin;
  }   
  void draw()   
  { 
+   fill(255, 255, 255, 5);
+   rect(0, 0, 800, 800);
+   //fill(255, 255, 0);
+   //ellipse(0, 0, 150, 150);
+   if(mousePressed == false) {
+       rX = -6;
+       rY = -6;
+     }
+   if(mousePressed == true) {
+     if(mouseX > 400) {
+       rX = -4;
+     } else if(mouseX < 400) {
+       rX = -8;
+     }
+     if(mouseY > 400) {
+       rY = -4;
+     } else if(mouseY < 400) {
+       rY = -8;
+     }
+   }
    for(int i = 0; i < Robin.length; i++) {
      Robin[i].walk();
      Robin[i].show();
@@ -32,8 +55,8 @@ Bacteria [] Robin;
   void walk() { 
     startX = startX + randomX;
     startY = startY + randomY;
-    randomX = (int)(Math.random()*12-6);
-    randomY = (int)(Math.random()*12-6);
+    randomX = (int)(Math.random()*12+rX);
+    randomY = (int)(Math.random()*12+rY);
     System.out.println(randomX);
     System.out.println(randomY);
   }
@@ -42,4 +65,4 @@ Bacteria [] Robin;
     strokeWeight(2);
     line(startX,startY, startX + randomX, startY + randomY); 
   }
-}   
+}  
