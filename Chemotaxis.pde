@@ -24,14 +24,14 @@ int rY = -6;
        rY = -6;
      }
    if(mousePressed == true) {
-     if(mouseX > 400) {
+     if(mouseX > 400 && (mouseButton == LEFT)) {
        rX = -4;
-     } else if(mouseX < 400) {
+     } else if(mouseX < 400 && (mouseButton == LEFT)) {
        rX = -8;
      }
-     if(mouseY > 400) {
+     if(mouseY > 400 && (mouseButton == RIGHT)) {
        rY = -4;
-     } else if(mouseY < 400) {
+     } else if(mouseY < 400 && (mouseButton == RIGHT)) {
        rY = -8;
      }
    }
