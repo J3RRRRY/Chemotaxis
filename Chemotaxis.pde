@@ -57,8 +57,6 @@ int rY = -6;
     startY = startY + randomY;
     randomX = (int)(Math.random()*12+rX);
     randomY = (int)(Math.random()*12+rY);
-    System.out.println(randomX);
-    System.out.println(randomY);
   }
   void show() {
     stroke(Color);
